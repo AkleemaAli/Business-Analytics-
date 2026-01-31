@@ -44,7 +44,12 @@ if uploaded_file:
     try:
         # Data Loading
         if uploaded_file.name.endswith('.csv'):
-            df = pd.read_csv(uploaded_file)
+            df = pd.read_csv(
+                uploaded_file, 
+                engine='python', 
+                on_bad_lines='warn', 
+                quoting=3
+            )
         else:
             df = pd.read_excel(uploaded_file, header=1)
         
@@ -106,4 +111,5 @@ if uploaded_file:
     except Exception as e:
         st.error(f"⚠️ Masla Aa Gaya: {e}")
 else:
+
     st.info("Upload file to view dashboard")
