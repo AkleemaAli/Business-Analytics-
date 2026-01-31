@@ -22,12 +22,12 @@ st.markdown("""
         border-radius: 15px;
         box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
     }
-   /* Sab text ko Dark Maroon kar diya taake saaf nazar aaye */
+    
     h1, h2, h3, p, label, .stMarkdown, span {
         color: #4a041c !important;
         font-weight: bold !important;
         
-    /* Fix for Columns background */
+    /* Fix Columns background */
     [data-testid="stVerticalBlock"] > [data-testid="stHorizontalBlock"] {
         background-color: rgba(255, 255, 255, 0.3);
         padding: 10px;
@@ -109,7 +109,8 @@ if uploaded_file:
             st.plotly_chart(fig4, use_container_width=True)
 
     except Exception as e:
-        st.error(f"⚠️ Masla Aa Gaya: {e}")
+        st.error(f"⚠️ Error: {e}")
 else:
 
     st.info("Upload file to view dashboard")
+
